@@ -1,0 +1,106 @@
+.contact {
+	width: 100%;
+	min-height: 80rem;
+	padding: 0 0 7rem 0;
+	border-bottom: 1px solid $gray_dark;
+	background: $gray_lightest url("../img/contact_bg.jpg") center no-repeat;
+	background-size: cover;
+}
+
+.contact__form {
+	max-width: 56rem;
+
+	@media (max-width: $mobile_full) {
+		max-width: 100%;
+	}
+}
+
+.contact__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact__item {
+	position: relative;
+	width: 100%;
+	margin-bottom: 2.5rem;
+}
+
+.contact__item input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+
+	@extend %form_field;
+
+	&::-webkit-input-placeholder { color: $gray_light; opacity: 1; transition: all 0.3s ease; }
+  &::-moz-placeholder 				 { color: $gray_light; opacity: 1; transition: all 0.3s ease; }
+  &:-ms-input-placeholder 		 { color: $gray_light; opacity: 1; transition: all 0.3s ease; }
+
+	&:focus::-webkit-input-placeholder {opacity: 0; transition: all 0.3s ease; border-color: $gray_dark;}
+  &:focus::-moz-placeholder          {opacity: 0; transition: all 0.3s ease; border-color: $gray_dark;}
+  &:focus:-moz-placeholder           {opacity: 0; transition: all 0.3s ease; border-color: $gray_dark;}
+  &:focus:-ms-input-placeholder      {opacity: 0; transition: all 0.3s ease; border-color: $gray_dark;}
+
+	&:hover {
+    outline: none;
+		border-color: $gray_dark; }
+  &:focus {
+    outline: none;
+		border-color: $gray_dark;
+  }
+}
+
+.contact__item textarea {height: 20rem;}
+
+// inputs and selects base ( @extend )
+%form_field {
+	display: block;
+	width: 100%;
+	height: 6rem;
+	padding: 1.5rem;
+	font: 300 2rem $font_1;
+	color: $gray_light;
+	border: 2px solid $gray_lightest;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+// date picker style
+.date-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font: 300 2rem $font_1;
+	color: $gray_dark;
+
+	fieldset {flex: 0 0 auto;}
+	select {
+		position: relative;
+		height: 5rem;
+		margin-right: 1rem;
+		padding: 0 3rem;
+		border: 1px solid $gray;
+		font: 300 2rem $font_1;
+		-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+		cursor:pointer;
+    background: url("../img/icon-select.svg") 95% / 15% no-repeat #fff;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+// month picker
+.month-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font: 300 2rem $font_1;
+	color: $gray_dark;
+}
+
+.hasDatepicker {width: 52% !important;}

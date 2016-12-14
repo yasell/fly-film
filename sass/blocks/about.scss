@@ -1,0 +1,36 @@
+.about {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 7rem;
+
+	@media (max-width: $mobile_full) {
+		flex-direction: column-reverse;
+	}
+}
+
+.about__img {
+	position: relative;
+	width: 35%;
+	margin: 0.5rem;
+	background-color: $gray;
+	overflow: hidden;
+
+	img {
+		@include centerImg;
+	}
+	@media (max-width: $mobile_full) {
+		width: 100%;
+		height: 40rem;
+		margin: 0;
+	}
+}
+
+.about__content {
+	width: 60%;
+	padding: 0 0.5rem;
+
+	h2 {padding: 0;}
+	@media (max-width: $mobile_full) {
+		width: 100%;
+	}
+}

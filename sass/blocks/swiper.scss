@@ -1,0 +1,41 @@
+.swiper-container {
+	background: $gray_lightest url("../img/slider_bg.jpg") center no-repeat;
+	background-size: cover;
+	border-top: 0.8rem solid $gray_lightest;
+	border-bottom: 0.8rem solid $gray_lightest;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 54rem;
+	margin-bottom: 7rem;
+}
+
+.swiper-slide {
+	font-weight: 700;
+	font-size: 3.6rem;
+	text-transform: uppercase;
+	color: $blue;
+	display: flex;
+	align-items: flex-start;
+
+	h1 {
+		font: 700 9.8rem $font_1;
+	}
+	p {
+		font: 300 1.8rem $font_1;
+	}
+}
+
+.swiper-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	@include niceText;
+	@media (max-width: 520px) {
+		align-items: center;
+
+		h1 {font-size: 6rem;}
+	}
+}

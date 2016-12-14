@@ -1,0 +1,87 @@
+// base style
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font: 300 7px/1.33 $font_1;
+
+// if you want responsive adaptive
+	@media (min-width: $tablet) {
+		font-size: 9px;
+	}
+	@media (min-width: $desktop) {
+		font-size: 10px;
+	}
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+	height: 100%;
+  width: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	font: 300 1.8rem $font_1;
+	color: $gray_dark;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $gray_dark;
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+h1 {}
+
+h2 {
+	padding: 1rem 0;
+	font: bold 3.3rem $font_1;
+	color: $gray_dark;
+	text-transform: uppercase;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+}
+
+// back to top
+.back-top {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 1000;
+
+	a {
+		display: block;
+		width: 5rem;
+		height: 5rem;
+		background: url("../img/icons/top.svg") center no-repeat;
+		background-size: contain;
+		text-align: center;
+		text-decoration: none;
+
+		&:hover {
+			background-image: url("../img/icons/top_hover.svg");
+		}
+	}
+}
+// end base style

@@ -1,0 +1,18 @@
+// base
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "reset";
+@import "base";
+
+// blocks
+@import "blocks/container";
+@import "blocks/btn";
+@import "blocks/header";
+@import "blocks/top-nav";
+@import "blocks/swiper";
+@import "blocks/about";
+@import "blocks/courses";
+@import "blocks/team";
+@import "blocks/contact";
+@import "blocks/footer";
