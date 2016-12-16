@@ -2,11 +2,36 @@
 	width: 100%;
 	min-height: 80rem;
 	padding: 0 0 7rem 0;
-	border-bottom: 1px solid $gray_dark;
 	background: $gray_lightest url("../img/contact_bg.jpg") center no-repeat;
 	background-size: cover;
 }
 
+// text
+.contact__wrapper {
+	width: 100%;
+	display: flex;
+}
+
+.contact__text {
+	display: none;
+	width: 10rem;
+	min-height: 100%;
+	margin-left: 2rem;
+	background: rgba(250, 250, 250, 0.5);
+	@include niceText;
+
+	p {
+		font: 700 10rem "Open Sans", "Arial", sans-serif;
+		text-transform: uppercase;
+		color: #2f4263;
+		transform: rotate(90deg);
+	}
+	@media (min-width: $mobile_full) {
+		display: block;
+	}
+}
+
+// form style
 .contact__form {
 	max-width: 56rem;
 
@@ -26,6 +51,56 @@
 	margin-bottom: 2.5rem;
 }
 
+// date picker style
+.date-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font: 300 2rem $font_1;
+	color: $gray_dark;
+
+	.birthdayPicker {
+		flex: 0 0 auto;
+		display: flex;
+
+		.birthDate {
+			order: -1;
+		}
+	}
+	select {
+		position: relative;
+		height: 5rem;
+		margin-right: 1rem;
+		padding: 0 3rem;
+		border: 1px solid $gray;
+		font: 300 2rem $font_1;
+		-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+		cursor:pointer;
+    background: url("../img/icons/icon-select.svg") 95% / 15% no-repeat #fff;
+		background-size: 14px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+// inputs and selects base ( @extend )
+%form_field {
+	display: block;
+	width: 100%;
+	height: 6rem;
+	padding: 1.5rem;
+	font: 300 2rem $font_1;
+	color: $gray_light;
+	border: 2px solid $gray_lightest;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+// common form style
 .contact__item input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -52,55 +127,3 @@ textarea {
 }
 
 .contact__item textarea {height: 20rem;}
-
-// inputs and selects base ( @extend )
-%form_field {
-	display: block;
-	width: 100%;
-	height: 6rem;
-	padding: 1.5rem;
-	font: 300 2rem $font_1;
-	color: $gray_light;
-	border: 2px solid $gray_lightest;
-	opacity: 1;
-	transition: all 0.3s ease;
-}
-
-// date picker style
-.date-wrap {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font: 300 2rem $font_1;
-	color: $gray_dark;
-
-	fieldset {flex: 0 0 auto;}
-	select {
-		position: relative;
-		height: 5rem;
-		margin-right: 1rem;
-		padding: 0 3rem;
-		border: 1px solid $gray;
-		font: 300 2rem $font_1;
-		-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-		cursor:pointer;
-    background: url("../img/icon-select.svg") 95% / 15% no-repeat #fff;
-
-		&:focus {
-			outline: none;
-		}
-	}
-}
-
-// month picker
-.month-wrap {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font: 300 2rem $font_1;
-	color: $gray_dark;
-}
-
-.hasDatepicker {width: 52% !important;}

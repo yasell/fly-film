@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<meta charset="utf-8">
@@ -11,7 +11,6 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<title> Fly &amp; Film SA </title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=cyrillic">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -43,7 +42,7 @@
 			<nav class="top-nav">
 				<ul class="top-nav__list">
 					<li class="top-nav__item">
-						<a href="#top" class="top-nav__link"> Principal </a>
+						<a href="#top" class="top-nav__link"> Accueil </a>
 					</li>
 					<li class="top-nav__item">
 						<a href="#rules" class="top-nav__link"> A propos de Nous </a>
@@ -52,7 +51,7 @@
 						<a href="#offer" class="top-nav__link"> Notre offre week-end </a>
 					</li>
 					<li class="top-nav__item">
-						<a href="#contact" class="top-nav__link"> Contact </a>
+						<a href="#contact" class="top-nav__link"> Inscription </a>
 					</li>
 				</ul>
 			</nav>
@@ -67,13 +66,11 @@
 					<div class="swiper-content  container">
 						<h1> Rpas-School </h1>
 						<p> Institut de Formation </p>
-						<span> A Propos de Nous </span>
-						<a href="#rules" class="btn  btn_top"> A Propos De Nous </a>
+						<p> Tu as un drone, nous t’offrons une formation gratuite le week-end </p>
+						<a href="#contact" class="btn  btn_top"> Inscription week-end </a>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div> -->
 		</div>
 
 		<div id="rules" class="about  container">
@@ -92,6 +89,50 @@
 			</div>
 		</div>
 
+		<div id="contact" class="contact">
+			<div class="container">
+				<h2> Inscription Offer Week-end </h2>
+				<div class="contact__wrapper">
+					<form id="order" class="contact__form" action="/" method="post">
+						<ul class="contact__list">
+							<li class="contact__item">
+								<input id="name" type="text" value="" autocomplete="on" required placeholder="Nom et prénom">
+							</li>
+							<li id="date_wrap" class="contact__item  date-wrap">
+								<p> Date de naissance </p>
+							</li>
+							<li class="contact__item">
+								<input id="mail" type="email" name="mail" value="" required placeholder="Adresse email">
+							</li>
+							<li class="contact__item">
+								<input id="phone" type="tel" name="phone" value="" required placeholder="Numero de telephone">
+							</li>
+							<li class="contact__item">
+								<input id="adress" type="text" name="adress" value="" placeholder="Adresse physique (rue, NPA et ville)">
+							</li>
+							<li class="contact__item  date-wrap">
+								<label> Notre offre week-end </label>
+								<select>
+								<option value="0"> Saturday, December 24 </option>
+								<option value="1"> Sunday, January 22 </option>
+								<option value="2"> Saturday, February 4 </option>
+								<option value="3"> Saturday, February 18 </option>
+								<option value="4"> Sunday, March 12 </option>
+							</select>
+							</li>
+							<li class="contact__item">
+								<textarea name="message" rows="8" cols="80"></textarea>
+							</li>
+						</ul>
+						<button class="btn  btn_submit" type="submit" name="button"> Envoyer </button>
+					</form>
+					<div class="contact__text">
+						<p> RPAS-School </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div id="offer" class="courses  container">
 			<h2> NOTRE OFFRE WEEK-END </h2>
 			<ul class="courses__list">
@@ -99,7 +140,7 @@
 					<div class="courses__img-wrap">
 						<img class="courses__img" src="img/course1_bg.jpg" alt="course1">
 					</div>
-					<p class="courses__content"> Venez vous initier à l’utilisation de drones lors d’une de nos séances de présentation en week-end. Un instructeur vous accueillera, vous fera une courte introduction sur le cadre légal qi régit l’utilisation de drones en Suisse et vous fera ensuite
+					<p class="courses__content"> Venez vous initier à l’utilisation de drones lors d’une de nos séances de présentation en week-end. Un instructeur vous accueillera, vous fera une courte introduction sur le cadre légal qui régit l’utilisation de drones en Suisse et vous fera ensuite
 						prendre les commandes d’un de nos appareils. Les places étant limitées, merci de vous inscrire rapidement ! </p>
 				</li>
 			</ul>
@@ -131,43 +172,10 @@
 				<div class="prev"></div>
 			</div>
 		</div>
-
-		<div id="contact" class="contact">
-			<div class="container">
-				<h2> Contact </h2>
-				<form id="order" class="contact__form" action="" method="post">
-					<ul class="contact__list">
-						<li class="contact__item">
-							<input id="name" type="text" value="" autocomplete="on" required placeholder="Nom et prénom">
-						</li>
-						<li id="date_wrap" class="contact__item  date-wrap">
-							<p> Date de naissance </p>
-						</li>
-						<li class="contact__item">
-							<input id="mail" type="email" name="mail" value="" required placeholder="Adresse email">
-						</li>
-						<li class="contact__item">
-							<input id="phone" type="tel" name="phone" value="" required placeholder="Numero de telephone">
-						</li>
-						<li class="contact__item">
-							<input id="adress" type="text" name="adress" value="" placeholder="Adresse physique (rue, NPA et ville)">
-						</li>
-						<li class="contact__item  month-wrap">
-							<label> Notre offre week-end </label>
-							<input type="text" id="datepicker">
-						</li>
-						<li class="contact__item">
-							<textarea name="message" rows="8" cols="80"></textarea>
-						</li>
-					</ul>
-					<button class="btn  btn_submit" type="submit" name="button"> Envoyer </button>
-				</form>
-			</div>
-		</div>
 	</main>
 
-	<footer class="footer  container">
-		<div class="footer__copyright"> &copy; 2016 Fly &amp; Film SA - <span>Rpas-School</span> </div>
+	<footer class="footer">
+		<div class="footer__copyright  container"> &copy; 2016 Fly &amp; Film SA - <span>Rpas-School</span> </div>
 	</footer>
 
 	<div id="back-top" class="back-top">
@@ -175,7 +183,6 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery-birthday-picker.min.js"></script>
 	<script src="js/main.js"></script>
 </body>

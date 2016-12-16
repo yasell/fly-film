@@ -52,20 +52,20 @@ $(document).ready(function($) {
 	// birthday
 	$("#date_wrap").birthdayPicker();
 	// choose date
-	var availableDates = ["24-12-2016", "22-1-2017", "4-2-2017", "18-2-2017", "12-3-2017"];
-
-	function available(date) {
-		dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-		if ($.inArray(dmy, availableDates) != -1) {
-			return [true, "", "Available"];
-		} else {
-			return [false, "", "unAvailable"];
-		}
-	}
-
-	$("#datepicker").datepicker({
-		beforeShowDay: available
-	});
+	// var availableDates = ["24-12-2016", "22-1-2017", "4-2-2017", "18-2-2017", "12-3-2017"];
+	//
+	// function available(date) {
+	// 	dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+	// 	if ($.inArray(dmy, availableDates) != -1) {
+	// 		return [true, "", "Available"];
+	// 	} else {
+	// 		return [false, "", "unAvailable"];
+	// 	}
+	// }
+	//
+	// $("#datepicker").datepicker({
+	// 	beforeShowDay: available
+	// });
 
 
 
@@ -84,4 +84,29 @@ $(document).ready(function($) {
 		nextSlide = +currentSlide === 1 ? 4 : +currentSlide - 1;
 		$carousel.attr("data-slide", nextSlide);
 	});
+});
+
+// order send
+$("#order").submit(function() {
+	$.ajax({
+		type: "POST",
+		url: "mail.php",
+		data: $(this).serialize()
+	}).done(function() {
+		$(this).find("input").val("");
+		// open modal
+		$("#modal_order").addClass("modal_show");
+		$(".modal_bg").css("display", "block");
+		// close modal
+		$("#modal_close").click(function() {
+			$("#modal_order").removeClass("modal_show");
+			$(".modal_bg").css("display", "none");
+		});
+		$(".modal_bg").click(function() {
+			$("#modal_order").removeClass("modal_show");
+			$(".modal_bg").css("display", "none");
+		})
+		$("#order").trigger("reset");
+	});
+	return false;
 });
