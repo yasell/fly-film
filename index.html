@@ -93,10 +93,11 @@
 			<div class="container">
 				<h2> Inscription Offer Week-end </h2>
 				<div class="contact__wrapper">
+
 					<form id="order" class="contact__form" action="/" method="post">
 						<ul class="contact__list">
 							<li class="contact__item">
-								<input id="name" type="text" value="" autocomplete="on" required placeholder="Nom et prénom">
+								<input id="name" type="text" name="name" value="" autocomplete="on" required placeholder="Nom et prénom">
 							</li>
 							<li id="date_wrap" class="contact__item  date-wrap">
 								<p> Date de naissance </p>
@@ -106,26 +107,28 @@
 							</li>
 							<li class="contact__item">
 								<input id="phone" type="tel" name="phone" value="" required placeholder="Numero de telephone">
+								<p class="errortext"></p>
 							</li>
 							<li class="contact__item">
 								<input id="adress" type="text" name="adress" value="" placeholder="Adresse physique (rue, NPA et ville)">
 							</li>
 							<li class="contact__item  date-wrap">
-								<label> Notre offre week-end </label>
-								<select>
-								<option value="0"> Saturday, December 24 </option>
-								<option value="1"> Sunday, January 22 </option>
-								<option value="2"> Saturday, February 4 </option>
-								<option value="3"> Saturday, February 18 </option>
-								<option value="4"> Sunday, March 12 </option>
+								<p> Notre offre week-end </p>
+								<select name="date">
+									<option value="December_24"> Saturday, December 24 </option>
+									<option value="January_22"> Sunday, January 22 </option>
+									<option value="February_4"> Saturday, February 4 </option>
+									<option value="February_18"> Saturday, February 18 </option>
+									<option value="March_12"> Sunday, March 12 </option>
 							</select>
 							</li>
 							<li class="contact__item">
-								<textarea name="message" rows="8" cols="80"></textarea>
+								<textarea name="mess" rows="8" cols="80"></textarea>
 							</li>
 						</ul>
 						<button class="btn  btn_submit" type="submit" name="button"> Envoyer </button>
 					</form>
+
 					<div class="contact__text">
 						<p> RPAS-School </p>
 					</div>
@@ -181,6 +184,16 @@
 	<div id="back-top" class="back-top">
 		<a href="#top"></a>
 	</div>
+
+	<div id="modal_order" class="modal">
+		<button id="modal_close" class="modal__close"> Close </button>
+		<div class="modal__guts">
+			<p> Merci! </p>
+			<p> Nous avons bien reçu votre inscription et vous répondrons dans les meilleurs délais. </p>
+		</div>
+	</div>
+	<div class="modal_bg"></div>
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/jquery-birthday-picker.min.js"></script>

@@ -127,3 +127,9 @@ textarea {
 }
 
 .contact__item textarea {height: 20rem;}
+
+.errortext {
+	padding: 1rem;
+	color: $red_dark;
+	transition: all 0.3s ease;
+}

@@ -51,21 +51,6 @@ $(document).ready(function($) {
 	// date pickers
 	// birthday
 	$("#date_wrap").birthdayPicker();
-	// choose date
-	// var availableDates = ["24-12-2016", "22-1-2017", "4-2-2017", "18-2-2017", "12-3-2017"];
-	//
-	// function available(date) {
-	// 	dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-	// 	if ($.inArray(dmy, availableDates) != -1) {
-	// 		return [true, "", "Available"];
-	// 	} else {
-	// 		return [false, "", "unAvailable"];
-	// 	}
-	// }
-	//
-	// $("#datepicker").datepicker({
-	// 	beforeShowDay: available
-	// });
 
 
 
@@ -86,8 +71,39 @@ $(document).ready(function($) {
 	});
 });
 
+
+
+// easy form validation
+function validateForm(dir) {
+	var form = dir;
+	var phone;
+	var error = [];
+	// var checking;
+	form.find('.errortext').html('');
+	phone = form.find('[name="phone"]').val();
+
+	if (phone === '') {
+		error.push('Entrez numero de telephone*');
+	} else
+	if (!/[0-9()-\s+]{3,20}/.test(phone)) {
+		error.push('Saisir correctement numero de telephone');
+	}
+	if (error.length > 0) {
+		$.each(error, function() {
+			form.find('.errortext').append(this + '<br>');
+		});
+		return false;
+	}
+	return true;
+}
+
 // order send
 $("#order").submit(function() {
+	var valid = validateForm($(this));
+	if (!valid) {
+		return false;
+	}
+
 	$.ajax({
 		type: "POST",
 		url: "mail.php",

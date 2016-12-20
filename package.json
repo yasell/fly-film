@@ -1,8 +1,8 @@
 {
-  "name": "project_name",
-  "version": "0.0.1",
+  "name": "fly_and_film",
+  "version": "1.0.0",
   "private": true,
-  "description": "project_description",
+  "description": "landing page for dron-school",
   "author": "RamanYasel",
 
   "devDependencies": {

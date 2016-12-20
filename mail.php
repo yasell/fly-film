@@ -1,14 +1,16 @@
 <?php
 
-$recepient = "raman.yasel@yahoo.com";
-$sitename = "fly&film";
+$recepient = "ecole@fly-and-film.com";
+$sitename = "Fly&Film";
 
-$log = trim($_POST["login"]);
 $name = trim($_POST["name"]);
-$phone = trim($_POST["phone"]);
-$gold = trim($_POST["gold"]);
+$birth = trim($_POST["date_wrap_birthDay"]);
 $mail = trim($_POST["mail"]);
-$message = "Логин: $log \nИмя клиента: $name \nТелефон клиента: $phone \nПотратить золотых: $gold \nПочта клиента: $mail";
+$phone = trim($_POST["phone"]);
+$adress = trim($_POST["adress"]);
+$date = htmlspecialchars ($_POST["date"]);
+$mess = trim($_POST["mess"]);
 
-$pagetitle = "Новая заявка с сайта Лепреконов \"$sitename\"";
+$message = "Nom et prénom: $name \nDate de naissance: $birth \nAdresse email: $mail \nNumero de telephone: $phone \nAdresse physique: $adress \nOffre week-end: $date \nMessage: $mess";
+$pagetitle = "Un nouveau site d'application \"$sitename\"";
 mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
